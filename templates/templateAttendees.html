@@ -5,13 +5,15 @@
 
     <th>#</th>
     <th>Name</th>
+    <th>Email</th>
     <th>Dietary preference</th>
     <th>Attends to sauna</th>
   </tr>
   <tr ng-repeat="person in persons">
     <td>{{ $index + 1 }}</td>
     <td>{{ person.firstName + "  " + person.lastName }}</td>
-    <td>{{ person.diet }}</td>
-    <td>{{ person.sauna }}</td>
+    <td>{{ person.email }}</td>
+    <td>{{ person.diet | capitalize }}</td>
+    <td>{{ person.sauna | bool2words }}</td>
   </tr>
 </table>
