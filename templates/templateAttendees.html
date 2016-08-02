@@ -1,0 +1,17 @@
+<h2>{{ title }}</h2>
+
+<table class="table table-striped">
+  <tr>
+
+    <th>#</th>
+    <th>Name</th>
+    <th>Dietary preference</th>
+    <th>Attends to sauna</th>
+  </tr>
+  <tr ng-repeat="person in persons">
+    <td>{{ $index + 1 }}</td>
+    <td>{{ person.firstName + "  " + person.lastName }}</td>
+    <td>{{ person.diet }}</td>
+    <td>{{ person.sauna }}</td>
+  </tr>
+</table>
