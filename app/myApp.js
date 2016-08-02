@@ -1,6 +1,5 @@
 // Creating module myApp, which can be called with ng-app="myApp" in the view (index.html)
-var myApp;
-myApp = angular.module('myApp', ['ngRoute', 'ngResource']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngResource']);
 
 // Configuring routing with routeprovider service
 myApp.config(function($routeProvider){
@@ -24,7 +23,6 @@ myApp.config(function($routeProvider){
     templateUrl : './templates/mainTemplate.html',
     controller : 'mainTemplateController'
   });
-
 });
 
 // Creating custom service for storing and calling data.
@@ -34,13 +32,6 @@ myApp.service('tempStorageService', function(){
   /* Object array to store, add and call data */ 
   this.storageObjArray = 
     [
-    {         
-      "firstName": "Mikko",
-      "lastName": "Karaiste",
-      "email": "mikko.karaiste@gmail.com",
-      "diet": "fish",
-      "sauna": true
-    },
     {
       "firstName": "Herkko",
       "lastName": "Makkonen",
@@ -90,7 +81,6 @@ myApp.service('tempStorageService', function(){
       "diet": "fish",
       "sauna": true
     },
-
     {    
       "firstName": "Paula",
       "lastName": "Viitaniemi",
@@ -103,7 +93,6 @@ myApp.service('tempStorageService', function(){
   // Some text that could be on a sole controller, but are here for testing the service.
   this.infoText = "We have an awesome event on 1st of September at Lutakko aukio!";
   this.buttonText = "Go ahead and register!";
-
 });
 
 // Creating custom filter to transform boolean data into user readable words.
@@ -117,7 +106,6 @@ myApp.filter('bool2words', function(){
       return "No...";
     }
   };
-
 });
 
 // Creating filter to capitalize the first letter of dietary options that would otherwise
@@ -130,7 +118,6 @@ myApp.filter('capitalize', function(){
     }
     return tempString;
   };
-
 });
 
 // Main controller is somewhat obsolete, the other controllers are nested withing the main
